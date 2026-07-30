@@ -1,0 +1,20 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.MaterialsGlassTransitionLemmaCanonicalLaneLean.ThermalFluctuationStructure
+import HautevilleHouse.MaterialsGlassTransitionLemmaCanonicalLaneLean.VogelFulcherTammannLaw
+import HautevilleHouse.MaterialsGlassTransitionLemmaCanonicalLaneLean.ConfigurationalEntropyModel
+import HautevilleHouse.MaterialsGlassTransitionLemmaCanonicalLaneLean.ModeCouplingTheory
+import HautevilleHouse.MaterialsGlassTransitionLemmaCanonicalLaneLean.PotentialEnergyLandscape
+import HautevilleHouse.MaterialsGlassTransitionLemmaCanonicalLaneLean.AdamGibbsRelation
+
+namespace HautevilleHouse
+namespace MaterialsGlassTransitionLemmaCanonicalLaneLean
+
+def MaterialsGlassTransitionLemmaAdmissibleClass (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem materials_glass_transition_lemma_endgame (A : AdmissibleClass) :
+    MaterialsGlassTransitionLemmaAdmissibleClass A :=
+  And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end MaterialsGlassTransitionLemmaCanonicalLaneLean
+end HautevilleHouse
